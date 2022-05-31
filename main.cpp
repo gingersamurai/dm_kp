@@ -33,6 +33,7 @@ signed main(){
 	for(int i = 0; i < m; i++){
 		int u, v;
 		cin >> u >> v;
+		v -= n / 2;
 		u--, v--;
 		v += n;
 		g[u].push_back(v);
@@ -48,7 +49,7 @@ signed main(){
 	cout << ans << endl;
 	for (int i = n; i < n*2; i++){
 		if (mt[i] != -1) {
-			cout << mt[i]+1 << " " <<  i+1-n<< endl;
+			cout << mt[i]+1 << " " <<  i+1-n + n/2<< endl;
 		}
 	}
 	

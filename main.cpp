@@ -29,11 +29,12 @@ signed main(){
 	cout.tie(NULL);
 	int n, m;
 	cin >> n >> m;
+	n /= 2;
 	vector<vector<int>> g(2*n);
 	for(int i = 0; i < m; i++){
 		int u, v;
 		cin >> u >> v;
-		v -= n / 2;
+		v -= n;
 		u--, v--;
 		v += n;
 		g[u].push_back(v);
@@ -46,10 +47,10 @@ signed main(){
 		vector<bool>used(n, false);
 		if (dfs_kuhn(g, i, mt, used)) ans++;
 	}
-	cout << ans << endl;
+	// cout << ans << endl;
 	for (int i = n; i < n*2; i++){
 		if (mt[i] != -1) {
-			cout << mt[i]+1 << " " <<  i+1-n + n/2<< endl;
+			cout << mt[i]+1 << " " <<  i+1-n + n<< endl;
 		}
 	}
 	
